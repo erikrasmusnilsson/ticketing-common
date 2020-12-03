@@ -16,6 +16,8 @@ export const errorHandler = (
     if (err instanceof CustomError) {
         return handleCustomError(err, res);
     }
+
+    console.error(err);
     res.status(500).send([{ message: err.message }]);
 }
 
